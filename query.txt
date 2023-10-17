@@ -19,31 +19,24 @@ Fuel Oil Usage (MMBTU) -  Monthly usage of the fuel oil according to actual read
 Business Question 
 
 1. Question: Which structure reported the maximum monthly fuel oil consumption?
-SELECT Building_Name, Fuel_Oil_Usage_MMBTU
-FROM your_table_name
-ORDER BY Fuel_Oil_Usage_MMBTU DESC
+SELECT building_name, fuel_Oil_usage_mmbtu
+FROM consumption
+ORDER BY fuel_Oil_usage_mmbtu DESC
 LIMIT 1;
 
 2. Question: Can we ascertain the cumulative fuel oil consumption for each borough?
-SELECT Borough, SUM(Fuel_Oil_Usage_MMBTU) AS Total_Fuel_Usage
-FROM your_table_name
-GROUP BY Borough
+SELECT borough, SUM(fuel_Oil_usage_mmbtu) AS Total_Fuel_Usage
+FROM consumption
+GROUP BY borough
 ORDER BY Total_Fuel_Usage DESC;
 
-3. Question: Can you identify the top five postal areas in terms of the number of structures?
-SELECT Postcode, COUNT(*) AS Number_of_Buildings
-FROM your_table_name
-GROUP BY Postcode
-ORDER BY Number_of_Buildings DESC
-LIMIT 5;
+3. Question: In each borough, how many structures reported zero fuel oil consumption?
+SELECT borough, COUNT(*) AS Buildings_with_Zero_Usage
+FROM consumption
+WHERE fuel_Oil_usage_mmbtu = 0
+GROUP BY borough;
 
-4. Question: In each borough, how many structures reported zero fuel oil consumption?
-SELECT Borough, COUNT(*) AS Buildings_with_Zero_Usage
-FROM your_table_name
-WHERE Fuel_Oil_Usage_MMBTU = 0
-GROUP BY Borough;
-
-5. Question: What is the mean fuel oil consumption for structures located in Manhattan?
-SELECT AVG(Fuel_Oil_Usage_MMBTU) AS Average_Fuel_Usage
-FROM your_table_name
-WHERE Borough = 'Manhattan';
+4. Question: What is the mean fuel oil consumption for structures located in Manhattan?
+SELECT AVG(fuel_Oil_usage_mmbtu) AS Average_Fuel_Usage
+FROM consumption
+WHERE borough = 'Manhattan';
