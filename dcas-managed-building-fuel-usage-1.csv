@@ -1,4 +1,4 @@
-Borough Number,Building Name,Building Address,Borough,State,Postcode,Block,Lot,Fuel Oil Usage (MMBTU)
+Borough_Number,Building_Name,Building_Address,Borough,State,Postcode,Block,Lot,Fuel_Oil_Usage_MMBTU
 1,Manhattan Municipal Building,1 Centre Street,Manhattan,New York,10007,121,1,0
 5,Staten Island Borough Hall,10 Richmond Terrace,Staten Island,New York,10301,7,1,1900.398
 1,Manhattan Criminal Court,100 Centre Street,Manhattan,New York,10013,167,1,17678.628
