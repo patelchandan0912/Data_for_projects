@@ -16,7 +16,7 @@ Lot- # of lot in NYC Borough/Block/Lot parcel number system - Number
 Fuel Oil Usage (MMBTU) -  Monthly usage of the fuel oil according to actual readings measured in million British Thermal Units (MMBTU) - a standard unit of measurement for energy content - Number
 
 
-Business Question and Relevant business Question
+Business Question 
 
 1. Question: Which structure reported the maximum monthly fuel oil consumption?
 SELECT Building_Name, Fuel_Oil_Usage_MMBTU
